@@ -1,9 +1,0 @@
-{
-  "engines": {
-    "node": "18.x"
-  },
-  "scripts": {
-    "start": "cd backend && node server.js",
-    "install": "cd backend && npm install --omit=dev"
-  }
-}
