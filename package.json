@@ -4,6 +4,6 @@
   },
   "scripts": {
     "start": "cd backend && node server.js",
-    "install": "cd backend && npm install"
+    "install": "cd backend && npm install --omit=dev"
   }
 }
