@@ -1,0 +1,9 @@
+{
+  "build": {
+    "base": "backend",
+    "watchPatterns": ["backend/**"]
+  },
+  "deploy": {
+    "startCommand": "cd backend && node server.js"
+  }
+}
