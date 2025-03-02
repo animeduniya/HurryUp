@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: HurryUp-Backend
+    env: node
+    buildCommand: cd backend && npm install --omit=dev
+    startCommand: cd backend && node server.js
+    rootDir: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
