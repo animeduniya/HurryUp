@@ -1,16 +1,22 @@
 const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db'); // Import MongoDB connection
-
-dotenv.config(); // Load environment variables
-
-connectDB(); // Connect to MongoDB
+const cors = require('cors');
 
 const app = express();
-app.use(express.json()); // Middleware to parse JSON
+app.use(cors());
+app.use(express.json());
 
-const PORT = process.env.PORT || 5000;
+app.get('/', (req, res) => {
+  res.send('HurryUp Backend Running 🚀');
+});
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+app.get('/products', (req, res) => {
+  res.json([
+    { id: 1, name: 'Milk', price: '₹50' },
+    { id: 2, name: 'Bread', price: '₹40' },
+    { id: 3, name: 'Eggs', price: '₹60' }
+  ]);
+});
+
+app.listen(5000, () => {
+  console.log('Server running on http://localhost:5000');
 });
